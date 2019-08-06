@@ -1,4 +1,4 @@
-package com.rakuten.persistable;
+package com.rakuten.summerinternship.persistable;
 
 import java.io.Serializable;
 
