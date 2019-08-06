@@ -13,6 +13,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class TaskService {
 
     private TaskRepository repository;
+    
+    @Autowired
+    public TaskService(TaskRepository repository) {
+        this.repository = repository;
+    }
 
     public Page<Task> getAllTasks(Pageable pageable) {
         return repository.findAll(pageable);

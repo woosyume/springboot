@@ -12,8 +12,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class IndexController {
-	@Autowired
 	TaskService service;
+	
+	@Autowired
+	public IndexController(TaskService service) {
+		this.service = service;
+	}
 	
 	@GetMapping("/")
 	public String home(Model model) {
