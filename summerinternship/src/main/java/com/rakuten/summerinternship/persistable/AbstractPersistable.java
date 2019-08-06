@@ -4,11 +4,13 @@ import java.io.Serializable;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.Transient;
 
 import org.springframework.data.domain.Persistable;
 import org.springframework.lang.Nullable;
 
+@MappedSuperclass
 public abstract class AbstractPersistable<PK extends Serializable> implements Persistable<PK> {
     @Id @GeneratedValue 
     private @Nullable PK id;
