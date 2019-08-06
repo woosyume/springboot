@@ -1,25 +1,34 @@
 package com.rakuten.summerinternship.database.domain;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.rakuten.summerinternship.persistable.AbstractPersistable;
 
-import lombok.Data;
-
-@Data
 @Entity
-@Table(name="tasks")
 public class Task extends AbstractPersistable<Integer> {
 
-    protected Task() {
+    @NotNull
+    @Size(min = 1, max = 50)
+    private String title;
 
+    @NotNull
+    @Size(min = 1, max = 100)
+    private String description;
+
+    protected Task() {}
+
+    public Task(String title, String description) {
+        this.title = title;
+        this.description = description;
     }
 
-	@Column(length=100, nullable=false) // varchar(100) not null
-    private String title;
-    
-	@Column(length=200, nullable=false) // varchar(100) not null
-    private String description;
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 }

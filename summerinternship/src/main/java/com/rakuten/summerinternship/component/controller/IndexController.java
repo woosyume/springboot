@@ -1,9 +1,8 @@
 package com.rakuten.summerinternship.component.controller;
 
-import com.rakuten.summerinternship.database.domain.Task;
 import com.rakuten.summerinternship.database.service.TaskService;
+import com.rakuten.summerinternship.database.domain.Task;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
@@ -12,9 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class IndexController {
-	TaskService service;
-	
-	@Autowired
+	private TaskService service;
+
 	public IndexController(TaskService service) {
 		this.service = service;
 	}
