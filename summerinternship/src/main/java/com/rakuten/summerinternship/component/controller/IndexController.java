@@ -19,8 +19,8 @@ public class IndexController {
 	
 	@GetMapping("/")
 	public String home(Model model) {
-		Page<Task> tasks = service.getAllTasks(PageRequest.of(0, 10));
-		model.addAttribute("tasks", tasks);
+		// Page<Task> tasks = service.getAllTasks(PageRequest.of(0, 10));
+		// model.addAttribute("tasks", tasks);
 
 		return "home";
 	}
